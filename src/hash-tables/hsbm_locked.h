@@ -59,7 +59,7 @@ private:
         // Entry we want to push up has moved.
         if (bit_mask_after != bit_mask) {
           if (free_segment != current_segment) {
-            m_segments[current_segment].lock.lock();
+            m_segments[current_segment].lock.unlock();
           }
           goto loopBegin;
         }
